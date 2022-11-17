@@ -16,8 +16,8 @@ class LunchBot(discord.Client):
     CMD_TEST_LUNCH = "!testlunch"
     CMD_ANNOUNCEMENTS = "!announcements"
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__(intents=discord.Intents.default())
 
         with open("config.json") as json_data_file:
             self.config = json.load(json_data_file)
